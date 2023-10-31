@@ -1,4 +1,5 @@
 import streamlit as st
+from send_emails import send_email
 
 
 with st.form(key="email_forms"):
@@ -20,5 +21,5 @@ Topic {user_topic}
     button = st.form_submit_button("Submit!")
 
     if button:
+        send_email(message)
         st.info("Your email was sent succesfully")
-        st.write(message)
